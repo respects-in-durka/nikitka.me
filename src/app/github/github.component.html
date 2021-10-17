@@ -1,0 +1,10 @@
+<div class="repositories">
+  <div *ngFor="let repo of githubService.getRepos()" class="repository" (click)="redirect(repo.html_url)">
+    <h3>{{ repo.name }}</h3>
+    <p>
+      {{ repo.description !== null ? "Description:" + repo.description: "No Description" }}<br>
+      Created At: {{ repo.created_at | date }}<br>
+      Forked: {{ repo.fork ? "Yes": "No" }}<br>
+    </p>
+  </div>
+</div>
